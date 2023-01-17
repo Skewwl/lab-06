@@ -11,35 +11,49 @@ function randomCustomersPerHour (min, max){
   }
 }
 
-let Seattle = {
+let seattle = {
   minHourlyCustomers: 23,
   maxHourlyCustomers: 65,
   averageCookiesPerCustomer: 6.3,
   cookiesPerHourArray: [],
   cookiesPurchasedPerHour: function (locationMinCustomers, locationMaxCustomers){
-    let dailyHours = 14;
-    i = 0;
+    let i = 0;
     let customersPerHour;
-    while (i < dailyHours) {
+    let hourlyCookieOutput = [];
+    while (i < 14) {
       customersPerHour = randomCustomersPerHour(locationMinCustomers, locationMaxCustomers);
       let x = customersPerHour * this.averageCookiesPerCustomer;
-      this.cookiesPerHourArray.push(Math.round(x));
+      hourlyCookieOutput.push(Math.round(x));
       i++;
     }
     let y = 0;
     let cookieCounter = 0;
     let totalCookies = 0;
     for (y = 0; y < 14; y++) {
+    cookieCounter = hourlyCookieOutput[y];
     totalCookies += cookieCounter;
     }
-  },
-  render: function(){
-    this.cookiesPurchasedPerHour(this.minHourlyCustomers, this.maxHourlyCustomers);
+    hourlyCookieOutput.push(totalCookies);
+    return hourlyCookieOutput;
   }
   // locationArrayOfHourlyCookiesPurchased: this.cookiesPurchasedPerHour(this.minHourlyCustomers, this.maxHourlyCustomers),
 }
 
-let Tokyo = {
+// let hoursOpenPlusTotal = [];
+// hoursOpenPlusTotal = seattle.cookiesPurchasedPerHour(seattle.minHourlyCustomers, seattle.maxHourlyCustomers);
+let seattleListPlacement = document.getElementById('mainid');
+// for (listItems = 0; listItems < hoursOpenPlusTotal.length; listItems++){}
+let elementForSeattleData = document.createElement('li');
+elementForSeattleData.textContent = seattle.cookiesPurchasedPerHour(seattle.minHourlyCustomers, seattle.maxHourlyCustomers);
+seattleListPlacement.appendChild(elementForSeattleData);
+
+
+
+
+
+
+
+let tokyo = {
   minHourlyCustomers: 3,
   maxHourlyCustomers: 24,
   averageCookiesPerCustomer: 1.2,
@@ -65,7 +79,7 @@ let Tokyo = {
   }
 }
 
-let Dubai = {
+let dubai = {
   minHourlyCustomers: 11,
   maxHourlyCustomers: 38,
   averageCookiesPerCustomer: 3.7,
@@ -91,7 +105,7 @@ let Dubai = {
   }
 };
 
-let Paris = {
+let paris = {
   minHourlyCustomers: 20,
   maxHourlyCustomers: 38,
   averageCookiesPerCustomer: 2.3,
@@ -117,7 +131,7 @@ let Paris = {
   }
 };
 
-let Lima = {
+let lima = {
   minHourlyCustomers: 2,
   maxHourlyCustomers: 16,
   averageCookiesPerCustomer: 4.6,
