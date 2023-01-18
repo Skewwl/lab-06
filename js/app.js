@@ -11,17 +11,19 @@ function randomCustomersPerHour (min, max){
   }
 }
 
+// I updated the variables to seattle function not any other cities FYI
+
 let seattle = {
   minHourlyCustomers: 23,
   maxHourlyCustomers: 65,
   averageCookiesPerCustomer: 6.3,
   cookiesPerHourArray: [],
-  cookiesPurchasedPerHour: function (locationMinCustomers, locationMaxCustomers){
+  cookiesPurchasedPerHour: function (){
     let i = 0;
     let customersPerHour;
     let hourlyCookieOutput = [];
     while (i < 14) {
-      customersPerHour = randomCustomersPerHour(locationMinCustomers, locationMaxCustomers);
+      customersPerHour = randomCustomersPerHour(this.minHourlyCustomers, this.maxHourlyCustomers);
       let x = customersPerHour * this.averageCookiesPerCustomer;
       hourlyCookieOutput.push(Math.round(x));
       i++;
