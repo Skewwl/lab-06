@@ -1,0 +1,18 @@
+
+
+body{
+    margin: 20px;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blueviolet;
+}
+
+td {
+    padding: 8px;
+    border: 2px solid black;
+}
