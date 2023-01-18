@@ -99,6 +99,121 @@ CityData.prototype.renderData = function () {
     row1.appendChild(cell16);
 };
 
+//create & render table header
+let tableHeaderData = [' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total'];
+
+function renderTHead () {
+    let tHeadElement = document.getElementById('allStoreLocations');
+    let row1 = document.createElement('tr');
+    let cell1 = document.createElement('th');
+    let cell2 = document.createElement('th');
+    let cell3 = document.createElement('th');
+    let cell4 = document.createElement('th');
+    let cell5 = document.createElement('th');
+    let cell6 = document.createElement('th');
+    let cell7 = document.createElement('th');
+    let cell8 = document.createElement('th');
+    let cell9 = document.createElement('th');
+    let cell10 = document.createElement('th');
+    let cell11 = document.createElement('th');
+    let cell12 = document.createElement('th');
+    let cell13 = document.createElement('th');
+    let cell14 = document.createElement('th');
+    let cell15 = document.createElement('th');
+    let cell16 = document.createElement('th');
+    cell1.innerHTML = tableHeaderData[0];
+    cell2.innerHTML = tableHeaderData[1];
+    cell3.innerHTML = tableHeaderData[2];
+    cell4.innerHTML = tableHeaderData[3];
+    cell5.innerHTML = tableHeaderData[4];
+    cell6.innerHTML = tableHeaderData[5];
+    cell7.innerHTML = tableHeaderData[6];
+    cell8.innerHTML = tableHeaderData[7];
+    cell9.innerHTML = tableHeaderData[8];
+    cell10.innerHTML = tableHeaderData[9];
+    cell11.innerHTML = tableHeaderData[10];
+    cell12.innerHTML = tableHeaderData[11];
+    cell13.innerHTML = tableHeaderData[12];
+    cell14.innerHTML = tableHeaderData[13];
+    cell15.innerHTML = tableHeaderData[14];
+    cell16.innerHTML = tableHeaderData[15];
+    tHeadElement.appendChild(row1);
+    row1.appendChild(cell1);
+    row1.appendChild(cell2);
+    row1.appendChild(cell3);
+    row1.appendChild(cell4);
+    row1.appendChild(cell5);
+    row1.appendChild(cell6);
+    row1.appendChild(cell7);
+    row1.appendChild(cell8);
+    row1.appendChild(cell9);
+    row1.appendChild(cell10);
+    row1.appendChild(cell11);
+    row1.appendChild(cell12);
+    row1.appendChild(cell13);
+    row1.appendChild(cell14);
+    row1.appendChild(cell15);
+    row1.appendChild(cell16);
+};
+
+//create & render table header
+let tableFooterData = [' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total'];
+
+function renderTFoot () {
+    let tFootElement = document.getElementById('allStoreLocations');
+    let row1 = document.createElement('tr');
+    let cell1 = document.createElement('th');
+    let cell2 = document.createElement('th');
+    let cell3 = document.createElement('th');
+    let cell4 = document.createElement('th');
+    let cell5 = document.createElement('th');
+    let cell6 = document.createElement('th');
+    let cell7 = document.createElement('th');
+    let cell8 = document.createElement('th');
+    let cell9 = document.createElement('th');
+    let cell10 = document.createElement('th');
+    let cell11 = document.createElement('th');
+    let cell12 = document.createElement('th');
+    let cell13 = document.createElement('th');
+    let cell14 = document.createElement('th');
+    let cell15 = document.createElement('th');
+    let cell16 = document.createElement('th');
+    cell1.innerHTML = tableHeaderData[0];
+    cell2.innerHTML = tableHeaderData[1];
+    cell3.innerHTML = tableHeaderData[2];
+    cell4.innerHTML = tableHeaderData[3];
+    cell5.innerHTML = tableHeaderData[4];
+    cell6.innerHTML = tableHeaderData[5];
+    cell7.innerHTML = tableHeaderData[6];
+    cell8.innerHTML = tableHeaderData[7];
+    cell9.innerHTML = tableHeaderData[8];
+    cell10.innerHTML = tableHeaderData[9];
+    cell11.innerHTML = tableHeaderData[10];
+    cell12.innerHTML = tableHeaderData[11];
+    cell13.innerHTML = tableHeaderData[12];
+    cell14.innerHTML = tableHeaderData[13];
+    cell15.innerHTML = tableHeaderData[14];
+    cell16.innerHTML = tableHeaderData[15];
+    tFootElement.appendChild(row1);
+    row1.appendChild(cell1);
+    row1.appendChild(cell2);
+    row1.appendChild(cell3);
+    row1.appendChild(cell4);
+    row1.appendChild(cell5);
+    row1.appendChild(cell6);
+    row1.appendChild(cell7);
+    row1.appendChild(cell8);
+    row1.appendChild(cell9);
+    row1.appendChild(cell10);
+    row1.appendChild(cell11);
+    row1.appendChild(cell12);
+    row1.appendChild(cell13);
+    row1.appendChild(cell14);
+    row1.appendChild(cell15);
+    row1.appendChild(cell16);
+};
+
+//store CityData to array
 allStoreLocations[0] = new CityData('Seattle', 23, 65, 6.3);
 console.log(allStoreLocations[0]);
 
@@ -114,8 +229,15 @@ console.log(allStoreLocations[3]);
 allStoreLocations[4] = new CityData('Lima', 2, 16, 4.6);
 console.log(allStoreLocations[4]);
 
+//render table head
+renderTHead();
+
+//render data to table
 allStoreLocations[0].renderData();
 allStoreLocations[1].renderData();
 allStoreLocations[2].renderData();
 allStoreLocations[3].renderData();
 allStoreLocations[4].renderData();
+
+//render table footer
+renderTFoot();
