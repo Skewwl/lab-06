@@ -12,6 +12,11 @@ h1{
     color: blueviolet;
 }
 
+th {
+    padding: 8px;
+    border: 2px solid black;
+}
+
 td {
     padding: 8px;
     border: 2px solid black;
