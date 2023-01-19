@@ -46,7 +46,7 @@ CityData.prototype.renderData = function () {
     let tableBody = document.getElementById('allStoreLocations');
     //create rows & cells
     let row1 = document.createElement('tr');
-    let cell1 = document.createElement('td');
+    let cell1 = document.createElement('th');
     let cell2 = document.createElement('td');
     let cell3 = document.createElement('td');
     let cell4 = document.createElement('td');
@@ -103,7 +103,7 @@ CityData.prototype.renderData = function () {
 let tableHeaderData = [' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total'];
 
 function renderTHead () {
-    let tHeadElement = document.getElementById('allStoreLocations');
+    let tHeadElement = document.getElementById('tableHeader');
     let row1 = document.createElement('tr');
     let cell1 = document.createElement('th');
     let cell2 = document.createElement('th');
@@ -156,11 +156,23 @@ function renderTHead () {
     row1.appendChild(cell16);
 };
 
-//create & render table header
-let tableFooterData = [' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Daily Location Total'];
+//make array for cookiesPurchasedPerHour data
+// let citiesSalesNumbersPerHour = [];
+
+// for (let i = 0; i < tableHeaderData.length - 1; i++){
+//     citiesSalesNumbersPerHour.push(allStoreLocations[i].cookiesPurchasedPerHour());
+// };
+
+// function footerCellData (cities) {
+//     for (let i = 0; i < allStoreLocations[i].cookiesPurchasedPerHour().length; i++){
+
+//     }
+
+//create & render table footer
+let tableFooterData = ['Totals'];
 
 function renderTFoot () {
-    let tFootElement = document.getElementById('allStoreLocations');
+    let tFootElement = document.getElementById('tableFooter');
     let row1 = document.createElement('tr');
     let cell1 = document.createElement('th');
     let cell2 = document.createElement('th');
@@ -178,22 +190,22 @@ function renderTFoot () {
     let cell14 = document.createElement('th');
     let cell15 = document.createElement('th');
     let cell16 = document.createElement('th');
-    cell1.innerHTML = tableHeaderData[0];
-    cell2.innerHTML = tableHeaderData[1];
-    cell3.innerHTML = tableHeaderData[2];
-    cell4.innerHTML = tableHeaderData[3];
-    cell5.innerHTML = tableHeaderData[4];
-    cell6.innerHTML = tableHeaderData[5];
-    cell7.innerHTML = tableHeaderData[6];
-    cell8.innerHTML = tableHeaderData[7];
-    cell9.innerHTML = tableHeaderData[8];
-    cell10.innerHTML = tableHeaderData[9];
-    cell11.innerHTML = tableHeaderData[10];
-    cell12.innerHTML = tableHeaderData[11];
-    cell13.innerHTML = tableHeaderData[12];
-    cell14.innerHTML = tableHeaderData[13];
-    cell15.innerHTML = tableHeaderData[14];
-    cell16.innerHTML = tableHeaderData[15];
+    cell1.innerHTML = tableFooterData[0];
+    cell2.innerHTML = tableFooterData[1];
+    cell3.innerHTML = tableFooterData[2];
+    cell4.innerHTML = tableFooterData[3];
+    cell5.innerHTML = tableFooterData[4];
+    cell6.innerHTML = tableFooterData[5];
+    cell7.innerHTML = tableFooterData[6];
+    cell8.innerHTML = tableFooterData[7];
+    cell9.innerHTML = tableFooterData[8];
+    cell10.innerHTML = tableFooterData[9];
+    cell11.innerHTML = tableFooterData[10];
+    cell12.innerHTML = tableFooterData[11];
+    cell13.innerHTML = tableFooterData[12];
+    cell14.innerHTML = tableFooterData[13];
+    cell15.innerHTML = tableFooterData[14];
+    cell16.innerHTML = tableFooterData[15];
     tFootElement.appendChild(row1);
     row1.appendChild(cell1);
     row1.appendChild(cell2);
@@ -240,4 +252,4 @@ allStoreLocations[3].renderData();
 allStoreLocations[4].renderData();
 
 //render table footer
-renderTFoot();
+//renderTFoot();
