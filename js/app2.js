@@ -157,11 +157,15 @@ function renderTHead () {
 };
 
 //make array for cookiesPurchasedPerHour data
-// let citiesSalesNumbersPerHour = [];
+let Hours = [];
+
+console.log(allStoreLocations[0].cookiesPurchasedPerHour());
 
 // for (let i = 0; i < tableHeaderData.length - 1; i++){
-//     citiesSalesNumbersPerHour.push(allStoreLocations[i].cookiesPurchasedPerHour());
+//     Hours.push(allStoreLocations[i].cookiesPurchasedPerHour());
 // };
+
+// console.log(Hours);
 
 // function footerCellData (cities) {
 //     for (let i = 0; i < allStoreLocations[i].cookiesPurchasedPerHour().length; i++){
