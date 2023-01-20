@@ -1,5 +1,13 @@
 'use strict';
 
+//variables
+let form = document.getElementById('form');
+let inputButton = document.getElementById("submit-button");
+let cityName = document.getElementById('cityName');
+let minCustomers = document.getElementById('minimumCustomers');
+let maxCustomers = document.getElementById('maximumCustomers');
+let averageCookiesPCustomer = document.getElementById('averageCookies/Customer');
+
 let allStoreLocations = [];
 
 function randomCustomersPerHour(min, max) {
@@ -242,6 +250,16 @@ allStoreLocations[2].renderData();
 allStoreLocations[3].renderData();
 allStoreLocations[4].renderData();
 
+//event handler
+form.addEventListener("submit", function(){
+  let cityNameValue = cityName.value;
+  let minCustomersValue = minCustomers.value;
+  let maxCustomersValue = maxCustomers.value;
+  let averageCookiesPCustomerValue = averageCookiesPCustomer.value;
+  allStoreLocations.push(new CityData(cityNameValue, minCustomersValue, maxCustomersValue, averageCookiesPCustomerValue));
+  allStoreLocations[allStoreLocations.length - 1].renderData();
+});
+
 //make array for cookiesPurchasedPerHour data
 let hourlyTotals = ['Total'];
 
@@ -258,4 +276,3 @@ console.log(hourlyTotals);
 
 //render table footer
 renderTFoot();
-
