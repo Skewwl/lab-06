@@ -4,5 +4,6 @@
 
 Render sales data to the document via JS.
 
-### Lighthouse Accessability Score
-![Screen Shot 2023-01-18 at 6 05 23 PM](https://user-images.githubusercontent.com/115224118/213339220-fc0b6214-780f-4c03-92ef-59c7f3cea64a.png)
+### New Lighthouse Accessability Score
+
+![Screen Shot 2023-01-19 at 11 49 22 PM](https://user-images.githubusercontent.com/115224118/213644065-79c94a87-5c4e-412f-9ed2-af9affbb3504.png)
