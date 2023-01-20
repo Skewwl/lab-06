@@ -251,7 +251,7 @@ allStoreLocations[3].renderData();
 allStoreLocations[4].renderData();
 
 //event handler
-form.addEventListener("click", function(){
+form.addEventListener("submit", function(){
   let cityNameValue = cityName.value;
   let minCustomersValue = minCustomers.value;
   let maxCustomersValue = maxCustomers.value;
