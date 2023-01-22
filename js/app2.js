@@ -167,7 +167,7 @@ function renderTHead() {
 };
 
 //create & render table footer
-let tableFooterData = ['Totals'];
+let tableFooterData = [];
 
 function renderTFoot() {
   let tFootElement = document.getElementById('tableFooter'); 
@@ -190,20 +190,35 @@ function renderTFoot() {
   let cell16 = document.createElement('th'); cell16.className='cell';
   cell1.innerHTML = hourlyTotals[0];
   cell2.innerHTML = hourlyTotals[1];
+  tableFooterData.push(hourlyTotals[1]);
   cell3.innerHTML = hourlyTotals[2];
+  tableFooterData.push(hourlyTotals[2]);
   cell4.innerHTML = hourlyTotals[3];
+  tableFooterData.push(hourlyTotals[3]);
   cell5.innerHTML = hourlyTotals[4];
+  tableFooterData.push(hourlyTotals[4]);
   cell6.innerHTML = hourlyTotals[5];
+  tableFooterData.push(hourlyTotals[5]);
   cell7.innerHTML = hourlyTotals[6];
+  tableFooterData.push(hourlyTotals[6]);
   cell8.innerHTML = hourlyTotals[7];
+  tableFooterData.push(hourlyTotals[7]);
   cell9.innerHTML = hourlyTotals[8];
+  tableFooterData.push(hourlyTotals[8]);
   cell10.innerHTML = hourlyTotals[9];
+  tableFooterData.push(hourlyTotals[9]);
   cell11.innerHTML = hourlyTotals[10];
+  tableFooterData.push(hourlyTotals[10]);
   cell12.innerHTML = hourlyTotals[11];
+  tableFooterData.push(hourlyTotals[11]);
   cell13.innerHTML = hourlyTotals[12];
+  tableFooterData.push(hourlyTotals[12]);
   cell14.innerHTML = hourlyTotals[13];
+  tableFooterData.push(hourlyTotals[13]);
   cell15.innerHTML = hourlyTotals[14];
+  tableFooterData.push(hourlyTotals[14]);
   cell16.innerHTML = hourlyTotals[15];
+  tableFooterData.push(hourlyTotals[15]);
   tFootElement.appendChild(row1);
   row1.appendChild(cell1);
   row1.appendChild(cell2);
@@ -272,9 +287,10 @@ form.addEventListener("submit", function(subEvent){
     newHourlyTotals.push(updateHour)
   }
   //newhourlyTotals is the array with the new cities numbers
-  console.log(newHourlyTotals);
-
-
+  for (let i = 0; i < newHourlyTotals.length; i++){
+  document.querySelectorAll('.cell')[i+1].innerHTML = hourlyTotals[i+1] + newHourlyTotals[i];
+  hourlyTotals[i+1] += newHourlyTotals[i];
+  };
   form.reset();
 });
 
