@@ -170,24 +170,24 @@ function renderTHead() {
 let tableFooterData = ['Totals'];
 
 function renderTFoot() {
-  let tFootElement = document.getElementById('tableFooter');
+  let tFootElement = document.getElementById('tableFooter'); 
   let row1 = document.createElement('tr');
-  let cell1 = document.createElement('th');
-  let cell2 = document.createElement('th');
-  let cell3 = document.createElement('th');
-  let cell4 = document.createElement('th');
-  let cell5 = document.createElement('th');
-  let cell6 = document.createElement('th');
-  let cell7 = document.createElement('th');
-  let cell8 = document.createElement('th');
-  let cell9 = document.createElement('th');
-  let cell10 = document.createElement('th');
-  let cell11 = document.createElement('th');
-  let cell12 = document.createElement('th');
-  let cell13 = document.createElement('th');
-  let cell14 = document.createElement('th');
-  let cell15 = document.createElement('th');
-  let cell16 = document.createElement('th');
+  let cell1 = document.createElement('th'); cell1.className='cell';
+  let cell2 = document.createElement('th'); cell2.className='cell';
+  let cell3 = document.createElement('th'); cell3.className='cell';
+  let cell4 = document.createElement('th'); cell4.className='cell';
+  let cell5 = document.createElement('th'); cell5.className='cell';
+  let cell6 = document.createElement('th'); cell6.className='cell';
+  let cell7 = document.createElement('th'); cell7.className='cell';
+  let cell8 = document.createElement('th'); cell8.className='cell';
+  let cell9 = document.createElement('th'); cell9.className='cell';
+  let cell10 = document.createElement('th'); cell10.className='cell';
+  let cell11 = document.createElement('th'); cell11.className='cell';
+  let cell12 = document.createElement('th'); cell12.className='cell';
+  let cell13 = document.createElement('th'); cell13.className='cell';
+  let cell14 = document.createElement('th'); cell14.className='cell';
+  let cell15 = document.createElement('th'); cell15.className='cell';
+  let cell16 = document.createElement('th'); cell16.className='cell';
   cell1.innerHTML = hourlyTotals[0];
   cell2.innerHTML = hourlyTotals[1];
   cell3.innerHTML = hourlyTotals[2];
@@ -250,14 +250,32 @@ allStoreLocations[2].renderData();
 allStoreLocations[3].renderData();
 allStoreLocations[4].renderData();
 
-//event handler
-form.addEventListener("submit", function(){
+//event handler & create new row
+form.addEventListener("submit", function(subEvent){
+  subEvent.preventDefault();
   let cityNameValue = cityName.value;
   let minCustomersValue = minCustomers.value;
   let maxCustomersValue = maxCustomers.value;
   let averageCookiesPCustomerValue = averageCookiesPCustomer.value;
   allStoreLocations.push(new CityData(cityNameValue, minCustomersValue, maxCustomersValue, averageCookiesPCustomerValue));
+  // console.log(allStoreLocations[allStoreLocations.length - 1].cookieNumbers);
+  allStoreLocations[allStoreLocations.length - 1].cookiesPurchasedPerHour();
   allStoreLocations[allStoreLocations.length - 1].renderData();
+  // console.log(allStoreLocations[allStoreLocations.length - 1].cookieNumbers);
+  
+  //+= footer data
+
+  let newHourlyTotals = [];
+  for (let i = 1; i < hourlyTotals.length; i++){
+    let updateHour = hourlyTotals[i];
+    updateHour = allStoreLocations[allStoreLocations.length-1].cookieNumbers[i-1];
+    newHourlyTotals.push(updateHour)
+  }
+  //newhourlyTotals is the array with the new cities numbers
+  console.log(newHourlyTotals);
+
+
+  form.reset();
 });
 
 //make array for cookiesPurchasedPerHour data
